@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JazzCash L1 Upgrade Demo</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.header {
+    background: #e31837;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.container {
+    max-width: 400px;
+    background: white;
+    margin: 35px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #ddd;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #777;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: #e31837;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #bd102b;
+}
+
+#result {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 7px;
+}
+
+.footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>JazzCash L1 Upgrade</h1>
+    <p style="color:white">Demo Request Portal</p>
+</div>
+
+<div class="container">
+
+    <h2>Account Upgrade</h2>
+
+    <p>Enter your JazzCash mobile number</p>
+
+    <form id="upgradeForm">
+
+        <label>Mobile Number</label>
+
+        <input
+            type="tel"
+            id="mobile"
+            placeholder="03XXXXXXXXX"
+            pattern="03[0-9]{9}"
+            maxlength="11"
+            required
+        >
+
+        <button type="submit">
+            Submit Demo Request
+        </button>
+
+    </form>
+
+    <div id="result">
+        <strong>Demo Request Submitted!</strong>
+        <p>Your demo request is Pending.</p>
+        <small>This is a demonstration only. No request was sent to JazzCash.</small>
+    </div>
+
+</div>
+
+<div class="footer">
+    Independent Demo Website | Not affiliated with JazzCash
+</div>
+
+<script>
+document.getElementById("upgradeForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const mobile = document.getElementById("mobile").value;
+
+    if (!/^03[0-9]{9}$/.test(mobile)) {
+        alert("Please enter a valid 11-digit mobile number.");
+        return;
+    }
+
+    document.getElementById("result").style.display = "block";
+
+});
+</script>
+
+</body>
+</html>
